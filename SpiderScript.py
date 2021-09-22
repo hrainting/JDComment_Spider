@@ -14,7 +14,7 @@ def commentSave(list_comment):
     '''
     list_comment: 二维list,包含了多条用户评论信息
     '''
-    file = io.open('data/JDComment_data.csv','w',encoding="utf-8",newline = '')
+    file = io.open('JDComment_data.csv','w',encoding="utf-8",newline = '')
     writer = csv.writer(file)
     writer.writerow(['用户ID','评论内容','购买时间','点赞数','回复数','得分','评价时间','手机型号'])
     for i in range(len(list_comment)):
@@ -70,6 +70,7 @@ def getCommentData(format_url,proc,i,maxPage):
             time.sleep(5)
             cur_page -= 1
             print('网络故障或者是网页出现了问题，五秒后重新连接')
+            
 
 if __name__ == "__main__":
     global list_comment
@@ -86,10 +87,10 @@ if __name__ == "__main__":
     'Sec-Fetch-Dest': 'script',
     'Sec-Fetch-Mode':'no-cors',
     'Sec-Fetch-Site':'same-site',
-    'cookie':'your cookies'
+    'cookie':'shshshfpa=d7652284-2677-e442-f65b-a18ed2e089b7-1611056071; shshshfpb=eOUYl%2FyuXFYLwv7eDtH4YLQ%3D%3D; TrackID=1hKarizYZ57NdV7srtnM1enex0Jh0YC4lJzRM1MkwReFRx-4w3xU-pLqDgyLLN0QL6ZjmgfchOqm3Gaiei6xQMr4vnf6in90SyUxGti7Nj3KkfUhWNHsVlHkoh_PX5Xy_; pinId=O67PJVPQj-o0uoFFSsfdKbV9-x-f3wj7; __jdu=16110560689641627630371; areaId=17; ipLoc-djd=17-1381-50713-0; PCSYCityID=CN_420000_420100_0; jwotest_product=99; unpl=V2_ZzNtbUIDEBV3CxRVLhBVVWIAEA9KVxdFIA9FUywdXwJmABdbclRCFnUUR1xnGl8UZgsZXEtcQRNFCEdkeRtdAGcAElVCZ3Mldgh2VUsZWwVnAhZaQ1BKHXINRlN4H1sHZgEUXXJnRBV8OHZkfhldBGUCFFlKU3MURQpHVXkfWQxmARJtCTlCWHUPRlR6HVsEYAoaWkdXRBZzD0RVeR9cNWYzEQ%3d%3d; __jdv=76161171|so.lenovo.com.cn|t_330412191_|tuiguang|1eb132c0d88a423c91ead626f5260247|1632272918632; __jda=122270672.16110560689641627630371.1611056068.1632243773.1632272919.12; __jdc=122270672; shshshfp=584a61554b96a42cfd5822b0ec3ee825; token=b3ac5da7d1c549943edd123efec3012c,2,906818; __tk=1YG51YTt2crXrAs41Y1AKcrurYq3KwsE1wG41YbXrcx,2,906818; shshshsID=b8c17506eb627f5ecff334470524ef9e_5_1632272955907; __jdb=122270672.5.16110560689641627630371|12.1632272919; 3AB9D23F7A4B3C9B=S5CLGPTR2H6IRDRTAFWABV3CMBJFK3PVUEUK2DO6D6I645RWP5BFUQ4LATFKJXPLQHQVCDXNFTWOSBS54ZHSVFYX64'
     }
     #手机四种颜色对应的产品id参数
-    productid = ['productId=100006795590','136061&productId=5089275','22778&productId=5475612','7021&productId=6784504']
+    productid = ['productId=100010594803','productId=100019141912','productId=100019141872','productId=100018886680']
     list_comment = [[]]
     sig_comment = []
     for proc in productid:#遍历产品颜色
