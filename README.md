@@ -1,8 +1,6 @@
 # 京东爬虫
 
-感谢大家的star和fork，为了感谢大家的关注，特意对代码进行了优化，对最新的url格式进行了更新，减少了一些冗余的参数，希望能够帮助大家入门爬虫，已经爬好的京东手机的评论已经存储在data目录下，可以直接用于进一步分析。对项目不熟悉的可以查看[**教程**](https://blog.csdn.net/weixin_42474261/article/details/88354134?spm=1001.2014.3001.5502)。后续会重新封装几个版本，主要是添加多线程、redis缓存等机制提高爬虫效率，同时也将把核心参数打包成json方便使用。
-
-希望你抓取顺利，同时也希望大家多多关注和支持，你们的**fork**是对我最大的认可，哈哈哈！
+感谢大佬的代码，原链接：https://blog.csdn.net/weixin_42474261/article/details/88354134?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522163227861116780261938679%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=163227861116780261938679&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduend~default-1-88354134.first_rank_v2_pc_rank_v29&utm_term=%E4%BA%AC%E4%B8%9C%E8%AF%84%E8%AE%BA%E7%88%AC%E8%99%AB&spm=1018.2226.3001.4187
 
 ## 抓取评论的关键字
 
@@ -60,6 +58,16 @@ pip install -r requirements.txt
 
 ![1551882088853](picture/Snipaste_2019-03-06_22-22-48.PNG) 
 (注意：在爬取数据之前，尽量确保网络的稳定，这能提高爬虫的效率，爬完所有数据，会存到data目录下的csv文件中)
+
+(_我在爬取过程中遇到了一个问题_：fake_useragent.errors.FakeUserAgentError: Maximum amount of retries reached
+
+再次感谢另一位大佬，原链接：https://blog.csdn.net/xc_zhou/article/details/106412377
+
+可能是缓存fake_useragent_0.1.11.json的问题(最新的版本），但是这个json文件我无法用wget方法或者浏览器下载下来，
+
+只需要将这个缓存文件放在windows或者linux的缓存目录下：
+
+1.获取临时目录：2.将 fake_useragent_0.1.11.json 放入上述linux 或者 windows的临时目录（这里**大佬**将自己成功运行的json文件提供链接:https://pan.baidu.com/s/1_Qv1LGBSjO2bnF4ocMqhwQ 提取码: 2hpu ）
 
 ### 数据处理脚本JDComment_Processing.ipynb
 使用Jupyter notebook/lab打开ipynb文件，随后shift+enter逐步执行，即可看到数据处理过程(每个单元格的执行情况)
